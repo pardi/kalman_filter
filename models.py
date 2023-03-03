@@ -6,7 +6,7 @@ class SimpleModel:
         self.x = np.array([[0], [0]])
         self.noise_mean = noise_mean
         self.noise_covariance = noise_covariance
-        self.A = np.array([[1, 1], [0, 2]])
+        self.A = np.array([[5, 3], [0, 5]])
         self.b = np.array([[0], [1]])
         self.c = np.array([1, 0])
         self.d = 0
