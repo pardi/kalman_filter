@@ -12,18 +12,17 @@ class SimpleModel:
         self.d = 0
         self.dt = dt
 
-    def send_command(self, u: float):
+    def send_command(self, u: float) -> np.array:
         dx = np.dot(self.A, self.x) + self.b * u
         self.integrate_step(dx)
 
         return self._get_measurements()
 
-    def integrate_step(self, dx: np.array):
+    def integrate_step(self, dx: np.array) -> None:
         self.x = self.x + dx * self.dt
 
-    def _get_measurements(self):
-        return self.x + 0.1 * np.random.rand(2, 1) - 0.05
-        # (np.random.rand(2, 1) - self.noise_mean) / self.noise_covariance
+    def _get_measurements(self) -> np.array:
+        return self.c @ self.x + 0.1 * np.random.rand(1, 1) - 0.05
 
-    def get_nominal_model(self):
+    def get_nominal_model(self) -> (np.array, np.array, np.array, np.array):
         return self.A, self.b, self.c, self.d
