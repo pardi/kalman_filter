@@ -22,8 +22,8 @@ class SimpleModel:
         self.x = self.x + dx * self.dt
 
     def _get_measurements(self):
-        return self.x + .1 * np.random.rand(2, 1) - 0.05
-            # (np.random.rand(2, 1) - self.noise_mean) / self.noise_covariance
+        return self.x + 0.1 * np.random.rand(2, 1) - 0.05
+        # (np.random.rand(2, 1) - self.noise_mean) / self.noise_covariance
 
     def get_nominal_model(self):
         return self.A, self.b, self.c, self.d

@@ -22,10 +22,7 @@ with
     install - to setup the environment
     format - to run PEP8 checking and format
     lint - to run the linting on the code
-    test - to run the tests
 ```
 
-During the PR process, the CI will execute all these calls to check if the code is ready for merging.
-
 ## Examples
-
+TODO

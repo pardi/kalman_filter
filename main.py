@@ -1,7 +1,8 @@
-from models import SimpleModel
 import matplotlib.pyplot as plt
-from kalmanfilter import KalmanFilt
 import numpy as np
+
+from kalmanfilter import KalmanFilt
+from models import SimpleModel
 
 
 def main():
@@ -14,7 +15,7 @@ def main():
     X_kf = []
     DX_kf = []
 
-    kf = KalmanFilt(x0=np.array([[.0], [.0]]))
+    kf = KalmanFilt(x0=np.array([[0.0], [0.0]]))
 
     for idx in range(100):
         u = 10 * np.sin(2 * np.pi * idx / 100.0)
@@ -35,12 +36,12 @@ def main():
 
     fig, ax = plt.subplots(2)
 
-    ax[0].plot(X, 'b')
-    ax[0].plot(X_real, 'r')
-    ax[0].plot(X_kf, '-cx')
-    ax[1].plot(DX, 'b')
-    ax[1].plot(DX_real, 'r')
-    ax[1].plot(DX_kf, '-cx')
+    ax[0].plot(X, "b")
+    ax[0].plot(X_real, "r")
+    ax[0].plot(X_kf, "-cx")
+    ax[1].plot(DX, "b")
+    ax[1].plot(DX_real, "r")
+    ax[1].plot(DX_kf, "-cx")
     plt.show()
 
 
