@@ -1,7 +1,10 @@
 ![example branch parameter](https://github.com/pardi/kalman_filter/actions/workflows/python-app.yml/badge.svg?branch=main)
 
 # Kalman Filter implementation
-TODO
+This repo contains an implementation of the Kalman Filter. 
+
+To test the algorithm in several conditions, we created a class called SimpleModel that implements a linear system. The noise (mean and std) are option to the class.
+
 
 ## Install
 
